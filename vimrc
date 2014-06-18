@@ -17,6 +17,8 @@ set shortmess=a
 set vb
 
 " -------------------------------------------------------- Source display
+" no tabs! spaces only
+set expandtab
 " tabspace to 2 spaces
 set ts=2
 " No linefeed forced ever
