@@ -10,6 +10,7 @@ must have plugins:
 * https://github.com/tpope/vim-fugitive
 * https://github.com/derekwyatt/vim-scala
 * https://github.com/terryma/vim-multiple-cursors
+* http://sjl.bitbucket.org/gundo.vim
 
 also cool:
 
