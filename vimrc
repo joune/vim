@@ -66,6 +66,12 @@ set incsearch
 " highlight search results
 set hlsearch
 " 																	!!! REMEMBER the * key searches for whatever is under the cursor
+"
+
+" -------------------------------------------------------- CtrlP plugin
+" ctrlp limits
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
 
 " ------------------------------------------------------- Programming
 " for correct ctags and cscope handling (alternative is required
