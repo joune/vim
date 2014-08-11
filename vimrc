@@ -44,6 +44,14 @@ else
 	set syntax=on
 endif	
 
+" -- set gradle as default compiler
+"  first copy https://github.com/niklasl/vimheap/blob/master/compiler/gradle.vim
+"  to ~/.vim/compiler/
+compiler! gradle
+" F9 to launch background compilation using dispatch plugin
+map <F9> :Make!<CR>
+map <F10> :!gradle run<CR>
+
 " ----------------------------------------------- status line
 " also see colorscheme in tgo.vim
 " status line looks like

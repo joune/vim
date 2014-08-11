@@ -11,6 +11,7 @@ must have plugins:
 * https://github.com/derekwyatt/vim-scala
 * https://github.com/terryma/vim-multiple-cursors
 * http://sjl.bitbucket.org/gundo.vim
+* https://github.com/tpope/vim-dispatch.git
 
 also cool:
 
