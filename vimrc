@@ -76,6 +76,9 @@ set hlsearch
 " 																	!!! REMEMBER the * key searches for whatever is under the cursor
 "
 
+" -------------------------------------------------------- Vim-Slime plugin
+let g:slime_target = "tmux"
+
 " -------------------------------------------------------- CtrlP plugin
 " ctrlp limits
 let g:ctrlp_max_files=0
@@ -131,3 +134,10 @@ map <C-PAGEDOWN> zR
 " use CTRL-RIGHT & CTRL-LEFT to move between buffers
 map <C-RIGHT> :bn<CR>
 map <C-LEFT> :bp<CR>
+
+
+" ------------------------------------------------------ read ms-Doc
+"use docx2txt.pl to allow VIm to view the text content of a .docx file directly.
+"http://docx2txt.sourceforge.net/
+autocmd BufReadPre *.docx set ro
+autocmd BufReadPost *.docx %!docx2txt.pl 
