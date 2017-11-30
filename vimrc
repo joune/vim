@@ -5,8 +5,10 @@ filetype plugin indent on
 "WARNING
 "
 "GUI specific options are in ~/.gvimrc
-colorscheme desert
-        
+"colorscheme solarized "desert
+set background=dark
+colorscheme slate
+
 
 " -------------------------------------------------------- General
 " don't bother about VI compatibility
@@ -26,7 +28,7 @@ set tw=0
 " and wrap at the end of window (no horizontal scrollbar)
 set wrap
 " Unix files
-set fileformat=unix
+"set fileformat=unix
 " do not allow actual rendering of html tags content
 let html_no_rendering=1
 " ident control
@@ -43,6 +45,11 @@ if version >= 600
 else	
 	set syntax=on
 endif	
+
+" easy escape of nvim terminal
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
 
 " -- set gradle as default compiler
 "  first copy https://github.com/niklasl/vimheap/blob/master/compiler/gradle.vim
@@ -75,6 +82,24 @@ set incsearch
 set hlsearch
 " 																	!!! REMEMBER the * key searches for whatever is under the cursor
 "
+" ack.vim to use silversearcher-ag if available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" -------------------------------------------------------- WildIgnore
+"  patterns to ignore when searching
+set wildignore+=*.so,*.swp,*.zip,*.class
+
+
+" -------------------------------------------------------- Nerdtree plugin
+map <F2> :NERDTreeToggle<CR>
+
+
+" -------------------------------------------------------- Syntastic plugin
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+map <F12> :SyntasticToggleMode<CR>
+
 
 " -------------------------------------------------------- Vim-Slime plugin
 let g:slime_target = "tmux"
@@ -83,6 +108,10 @@ let g:slime_target = "tmux"
 " ctrlp limits
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+let g:ctrlp_custom_ignore = {
+ \ 'file': '\v\.(xml|html)$',
+ \ }
+
 
 " ------------------------------------------------------- Programming
 " for correct ctags and cscope handling (alternative is required
